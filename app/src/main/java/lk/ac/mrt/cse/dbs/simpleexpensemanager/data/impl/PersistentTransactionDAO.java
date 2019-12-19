@@ -78,9 +78,9 @@ public class PersistentTransactionDAO implements TransactionDAO {
 
         List<Transaction> transactions = new LinkedList<>();
 
-        String countQuery = "SELECT  * FROM transaction_table ORDER BY id DESC;";
+        String countQuery = "SELECT  * FROM transaction_table ORDER BY id DESC LIMIT ?;";
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery(countQuery, null);
+        Cursor cursor = db.rawQuery(countQuery, new String[]{Integer.toString(limit)});
         int size = cursor.getCount();
         if (size <= limit) {
             limit = size;
