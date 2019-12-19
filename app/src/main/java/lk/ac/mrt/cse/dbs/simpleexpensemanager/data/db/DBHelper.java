@@ -30,10 +30,10 @@ public class DBHelper extends SQLiteOpenHelper {
                 "name TEXT PRIMARY KEY NOT NULL" +
                 ");");
         sqLiteDatabase.execSQL("" +
-                "INSERT INTO expense_type_table(type) VALUES('EXPENSE');"
+                "INSERT INTO expense_type_table(name) VALUES('EXPENSE');"
                 );
         sqLiteDatabase.execSQL("" +
-                "INSERT INTO expense_type_table(type) VALUES('INCOME');"
+                "INSERT INTO expense_type_table(name) VALUES('INCOME');"
                 );
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS transaction_table (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +

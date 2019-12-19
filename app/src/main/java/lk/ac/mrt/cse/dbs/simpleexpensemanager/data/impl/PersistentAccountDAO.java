@@ -74,7 +74,7 @@ public class PersistentAccountDAO implements AccountDAO {
     @Override
     public Account getAccount(String accountNo) throws InvalidAccountException {
 
-        String selectQuery = "SELECT  * FROM account_table WHERE accountNo = " + accountNo + ";";
+        String selectQuery = "SELECT  * FROM account_table WHERE accountNo = '" + accountNo + "';";
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
@@ -119,7 +119,7 @@ public class PersistentAccountDAO implements AccountDAO {
 
     @Override
     public void removeAccount(String accountNo) throws InvalidAccountException {
-        String selectQuery = "SELECT  * FROM account_table WHERE accountNo = " + accountNo + ";";
+        String selectQuery = "SELECT  * FROM account_table WHERE accountNo = '" + accountNo + "';";
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
@@ -137,7 +137,7 @@ public class PersistentAccountDAO implements AccountDAO {
     @Override
     public void updateBalance(String accountNo, ExpenseType expenseType, double amount) throws InvalidAccountException {
 
-        String selectQuery = "SELECT  * FROM account_table WHERE accountNo = " + accountNo + ";";
+        String selectQuery = "SELECT  * FROM account_table WHERE accountNo = '" + accountNo + "';";
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
