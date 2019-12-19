@@ -107,7 +107,7 @@ public class PersistentTransactionDAO implements TransactionDAO {
 
                 i++;
 
-            } while (cursor.moveToNext() && (i < limit));
+            } while ((i < limit) && cursor.moveToNext());
         }
 
         // close db connection and cursor
