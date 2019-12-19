@@ -24,7 +24,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "accountNo TEXT PRIMARY KEY NOT NULL," +
                 "bankName TEXT NOT NULL," +
                 "accountHolderName TEXT NOT NULL," +
-                "balance REAL" +
+                "balance REAL NOT NULL" +
                 ");");
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS expense_type_table (" +
                 "name TEXT PRIMARY KEY NOT NULL" +
@@ -40,7 +40,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "date TEXT NOT NULL," +
                 "accountNo TEXT NOT NULL," +
                 "expenseType TEXT NOT NULL," +
-                "amount REAL," +
+                "amount REAL NOT NULL," +
                 "FOREIGN KEY (accountNo) REFERENCES account_table (accountNo)," +
                 "FOREIGN KEY (expenseType) REFERENCES expense_type_table (name)" +
                 ");");
